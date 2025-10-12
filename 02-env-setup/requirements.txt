@@ -1,0 +1,2 @@
+# Base runtime requirements for MCP study
+# Keep minimal; add FastAPI etc. in M4

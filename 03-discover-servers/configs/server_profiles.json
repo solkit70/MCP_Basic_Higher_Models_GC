@@ -1,0 +1,19 @@
+{
+  "profiles": [
+    {
+      "name": "sample-stdio",
+      "enabled": true,
+      "type": "stdio",
+      "exec_path": "C:\\path\\to\\mcp-server.exe",
+      "args": [],
+      "env": {}
+    },
+    {
+      "name": "sample-ws",
+      "enabled": true,
+      "type": "ws",
+      "uri": "ws://127.0.0.1:9000",
+      "headers": {}
+    }
+  ]
+}
