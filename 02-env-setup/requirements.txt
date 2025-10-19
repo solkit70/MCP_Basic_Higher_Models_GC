@@ -1,2 +1,15 @@
 # Base runtime requirements for MCP study
 # Keep minimal; add FastAPI etc. in M4
+fastapi==0.115.0
+# mcp 1.18.0 requires uvicorn>=0.31.1 on non-emscripten platforms
+uvicorn[standard]==0.31.1
+# mcp 1.18.0 requires pydantic >=2.11.0; align with FastAPI (<3)
+pydantic==2.11.4
+python-dotenv==1.0.1
+# Networking (bumped to satisfy fastmcp>=2.12.5 which requires httpx>=0.28.1)
+httpx==0.28.1
+# Official MCP Python SDK (clients/servers/CLI)
+mcp[cli]==1.18.0
+# Optional: FastMCP framework (advanced features) — temporarily removed due to version conflict with mcp 1.18.0.
+# To use FastMCP now, pin mcp to <1.17.0 and add:
+# fastmcp==2.12.5
