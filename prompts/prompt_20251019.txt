@@ -1,0 +1,14 @@
+Prompt Session - 2025-10-19
+
+Context:
+- Project: MCP_Basic_Higher_Models_GC
+- OS: Windows + PowerShell 5.1
+
+Goals:
+- 
+
+Tasks:
+- 
+
+Notes:
+- 
