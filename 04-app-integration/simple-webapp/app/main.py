@@ -1,6 +1,13 @@
+from pathlib import Path
+from dotenv import load_dotenv
 from fastapi import FastAPI
 from .routers.health import router as health_router
 from .routers.mcp import router as mcp_router
+
+# Load .env file from app directory
+env_file = Path(__file__).parent.parent / ".env"
+if env_file.exists():
+    load_dotenv(env_file)
 
 
 def create_app() -> FastAPI:

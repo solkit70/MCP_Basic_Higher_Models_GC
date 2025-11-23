@@ -1,0 +1,33 @@
+{
+  "server": "echo.py",
+  "tests": [
+    {
+      "step": "initialize",
+      "status": "success",
+      "server_name": "Echo Server",
+      "server_version": "1.18.0"
+    },
+    {
+      "step": "list_tools",
+      "status": "success",
+      "tools": [
+        {
+          "name": "echo_tool",
+          "description": "Echo the input text"
+        }
+      ]
+    },
+    {
+      "step": "call_echo_tool",
+      "status": "success",
+      "input": "Hello MCP! This is a test from Claude Code.",
+      "output": "Hello MCP! This is a test from Claude Code."
+    },
+    {
+      "step": "call_echo_tool_empty",
+      "status": "success",
+      "input": "",
+      "output": ""
+    }
+  ]
+}
