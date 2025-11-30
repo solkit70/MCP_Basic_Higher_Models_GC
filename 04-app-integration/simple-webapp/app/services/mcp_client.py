@@ -167,6 +167,7 @@ class _StdioAdapter:
                 stdout=subprocess.PIPE,
                 stderr=subprocess.PIPE,
                 text=True,
+                encoding='utf-8',  # Explicitly use UTF-8 for MCP JSON-RPC communication
                 bufsize=1  # Line buffered
             )
         except FileNotFoundError as e:

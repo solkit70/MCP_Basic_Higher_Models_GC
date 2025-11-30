@@ -1,0 +1,11 @@
+MCP Server Test Data
+
+File: sample2.txt
+Purpose: Testing file operations
+
+Content:
+- This is the second test file
+- It has multiple lines
+- Used for testing list_files and read_file tools
+
+End of file.

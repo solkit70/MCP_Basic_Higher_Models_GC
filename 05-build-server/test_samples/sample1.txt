@@ -1,0 +1,9 @@
+Hello, MCP File Server!
+
+This is a sample text file for testing the read_file tool.
+
+Line 1: 안녕하세요 (Korean)
+Line 2: こんにちは (Japanese)
+Line 3: 你好 (Chinese)
+
+This file contains UTF-8 encoded text with multiple languages.
