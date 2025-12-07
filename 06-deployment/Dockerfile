@@ -19,7 +19,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && rm -rf /var/lib/apt/lists/*
 
 # Copy requirements file
-COPY 04-app-integration/simple-webapp/requirements.txt .
+COPY 02-env-setup/requirements.txt .
 
 # Install Python dependencies to user directory
 RUN pip install --user --no-cache-dir -r requirements.txt
@@ -62,14 +62,14 @@ EXPOSE 8000
 # Switch to non-root user
 USER mcpuser
 
-# Health check
+# Health check (using httpx which is already in requirements)
 HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
-    CMD python -c "import requests; requests.get('http://localhost:8000/mcp/health', timeout=5)"
+    CMD python -c "import httpx; httpx.get('http://localhost:8000/mcp/health', timeout=5)"
 
 # Set environment variables
 ENV PYTHONUNBUFFERED=1 \
     MCP_MODE=stdio \
-    MCP_EXEC_PATH="/home/mcpuser/.local/bin/python /app/servers/file_server.py" \
+    MCP_EXEC_PATH="python /app/servers/file_server.py" \
     MCP_TIMEOUT_DEFAULT=10
 
 # Run the application

@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   mcp-webapp:
     build:
@@ -12,7 +10,7 @@ services:
     environment:
       # MCP Configuration
       - MCP_MODE=stdio
-      - MCP_EXEC_PATH=/home/mcpuser/.local/bin/python /app/servers/file_server.py
+      - MCP_EXEC_PATH=python /app/servers/file_server.py
       - MCP_TIMEOUT_DEFAULT=10
       # Python Configuration
       - PYTHONUNBUFFERED=1
@@ -20,7 +18,7 @@ services:
       # Mount test samples for live updates during development
       - ../05-build-server/test_samples:/app/test_samples:ro
     healthcheck:
-      test: ["CMD", "python", "-c", "import requests; requests.get('http://localhost:8000/mcp/health', timeout=5)"]
+      test: ["CMD", "python", "-c", "import httpx; httpx.get('http://localhost:8000/mcp/health', timeout=5)"]
       interval: 30s
       timeout: 10s
       retries: 3
