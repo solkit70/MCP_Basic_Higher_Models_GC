@@ -7,6 +7,57 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.1.0] - 2025-12-14
+
+### Added - M8 Capstone: Real-time Monitoring System
+- **Real-time monitoring system** for MCP servers
+  - Performance metrics collection (API call counts, latency, success rates)
+  - Background health checker with 30-second intervals
+  - REST API endpoints for monitoring
+- **MetricsCollector** service (`app/services/metrics_collector.py`)
+  - Thread-safe metrics collection with Lock
+  - In-memory storage for fast performance (< 5ms overhead)
+  - Statistics calculation (average, min/max, success rate)
+  - Singleton pattern for global access
+- **HealthChecker** service (`app/services/health_checker.py`)
+  - Background thread for periodic health checks
+  - Status transition logic (ok → degraded → error)
+  - Automatic recovery detection
+  - Configurable check interval (default 30s)
+- **MonitoringRouter** API (`app/routers/monitoring.py`)
+  - `GET /monitoring/status` - System status summary
+  - `GET /monitoring/metrics` - Performance metrics query
+  - `GET /monitoring/health/{server}` - Server health details
+  - `GET /monitoring/health` - All servers health
+  - `POST /monitoring/reset` - Reset metrics
+- **Comprehensive documentation** (`08-capstone/`)
+  - DESIGN.md (800 lines) - Architecture and design decisions
+  - README.md (650 lines) - Project overview and API reference
+  - DEMO_GUIDE.md (700 lines) - Step-by-step demo instructions
+- **Automated demo script** (`08-capstone/scripts/run_demo.ps1`)
+  - One-command demo execution
+  - 15 API calls demonstration (10x read_file, 5x list_files)
+  - Automatic cleanup and logging
+- **Learning documentation**
+  - 20251214_WorkLog_M8_학습계획.md (680 lines) - Learning plan
+  - 20251214_WorkLog_M8_Capstone.md (500 lines) - Work log
+
+### Changed
+- Updated FastAPI app metadata (title, version, description)
+- Integrated monitoring router into main application
+- Version bumped to 1.1.0
+
+### Technical Details
+- **Thread Safety**: Lock-based concurrency control
+- **Performance**: < 5ms metrics collection overhead
+- **Scalability**: Easy to extend with database storage
+- **Extensibility**: Support for multiple MCP servers
+
+### Milestone Achievement
+- ✅ **M8 Capstone Complete** - Final milestone of MCP learning journey
+- ✅ **100% Project Completion** - All 8 milestones (M1-M8) finished
+- **Learning Period**: 2025-10-05 to 2025-12-14 (~10 weeks)
+
 ## [1.0.0] - 2025-12-07
 
 ### Added

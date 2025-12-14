@@ -1,0 +1,16 @@
+=== Test 1: Health ===
+Status: 200
+Response: {
+  "status": "ok",
+  "server_type": "stdio"
+}
+
+=== Test 2: List Tools ===
+Status: 200
+Tools: 2
+Error: 'charmap' codec can't encode characters in position 21-22: character maps to <undefined>
+
+=== Test 3: Call read_file Tool ===
+Status: 200
+Response keys: ['tool', 'data', 'latency_ms', 'success']
+Error: 'charmap' codec can't encode characters in position 113-117: character maps to <undefined>

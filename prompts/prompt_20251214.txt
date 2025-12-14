@@ -1,0 +1,27 @@
+오늘 2025년 12월 14일 MCP 공부를 시작 하겠습니다. 오늘이 마지막 시간일 것 같은데요. prompt_template.txt 에 있는 내용을 참조해서 오늘의 학습을 시작해 주세요.
+
+---
+
+AI 응답:
+- M8 캡스톤 프로젝트 (최종 마일스톤) 시작
+- 시나리오 3 선택: 실시간 모니터링 대시보드
+
+작업 내용:
+1. M8 학습 계획 수립 (docs/20251214_WorkLog_M8_학습계획.md)
+2. 08-capstone 폴더 구조 생성
+3. 설계 문서 작성 (08-capstone/DESIGN.md)
+4. MetricsCollector 구현 (app/services/metrics_collector.py)
+5. HealthChecker 구현 (app/services/health_checker.py)
+6. MonitoringRouter 구현 (app/routers/monitoring.py)
+7. FastAPI 앱에 모니터링 라우터 등록 (app/main.py)
+8. 데모 스크립트 작성 (08-capstone/scripts/run_demo.ps1)
+9. README 작성 (08-capstone/README.md)
+10. DEMO_GUIDE 작성 (08-capstone/DEMO_GUIDE.md)
+
+주요 기능:
+- 성능 메트릭 수집 (도구별 호출 횟수, 응답 시간, 성공률)
+- 백그라운드 헬스 체커 (30초 주기)
+- REST API 엔드포인트 (/monitoring/status, /metrics, /health, /reset)
+- 프로덕션 준비 (스레드 안전, 인메모리 저장)
+
+M1~M8 완료: MCP 학습 100% 달성!
