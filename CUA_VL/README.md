@@ -668,9 +668,9 @@ echo "*.pyc" >> .gitignore
 ## 📞 Contact
 
 **Catch Up AI 채널**
-- YouTube: [채널 링크]
-- Email: [이메일]
-- GitHub: [GitHub 링크]
+- YouTube: https://www.youtube.com/@catchupai/
+- Email: solkit70@gmail.com
+- GitHub: https://github.com/solkit70/MCP_Basic_Higher_Models_GC.git
 
 ---
 
