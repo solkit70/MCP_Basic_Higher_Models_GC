@@ -350,7 +350,21 @@ CUA_VL/
 ## ❓ FAQ
 
 ### Q1. AI 없이도 사용 가능한가요?
-**A**: CUA_VL은 AI와의 협업을 전제로 설계되었습니다. Claude, ChatGPT 등 AI 어시스턴트와 함께 사용하시면 최대 효과를 볼 수 있습니다.
+**A**: **아니요, AI는 필수입니다.** CUA_VL의 "Vibe Learning"은 AI와의 협업을 핵심으로 합니다.
+
+**왜 AI가 필수인가?**
+- **Roadmap 생성**: AI가 Topic 정보를 분석하여 체계적인 학습 계획 수립
+- **Daily Learning**: AI가 진행 상황을 파악하고 매일의 학습 계획 제시
+- **실시간 학습 지원**: 막힐 때 즉시 질문하고 답변 받기
+- **코드 리뷰 및 디버깅**: AI가 작성한 코드 검증 및 문제 해결 도움
+- **WorkLog 작성 지원**: AI가 구조화된 기록 작성 가이드
+
+**권장 AI 도구**:
+- Claude (추천): Claude Code, Claude.ai
+- ChatGPT: GPT-4 이상
+- 기타: GitHub Copilot, Cursor 등
+
+AI 없이는 CUA_VL의 핵심 가치인 "효율적 학습"과 "AI 시대 학습법"을 경험할 수 없습니다.
 
 ### Q2. 어떤 Topic에 적합한가요?
 **A**: 프로그래밍, 프레임워크, 도구, 기술 등 실습이 가능한 모든 Topic에 적합합니다.
