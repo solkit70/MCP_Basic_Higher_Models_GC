@@ -16,15 +16,36 @@
 
 ## 🚀 5분 만에 시작하기
 
-### Step 1: CUA_VL 복사
+### Step 0: 시작하기 전에
 
-```bash
-# GitHub에서 복사
-git clone https://github.com/solkit70/MCP_Basic_Higher_Models_GC.git
-cd MCP_Basic_Higher_Models_GC/CUA_VL
-
-# 또는 ZIP 다운로드 후 압축 해제
+**CUA_VL_v2.0 폴더에 포함된 파일**:
 ```
+CUA_VL_v2.0/
+├── README.md                        # CUA_VL 방법론 소개 (먼저 읽기 권장!)
+├── GETTING_STARTED.md              # 이 파일 - 빠른 시작 가이드
+└── templates/
+    ├── topic_starter.md            # Topic 시작 템플릿
+    ├── roadmap_prompt_template.md  # Roadmap 생성 템플릿
+    └── daily_learning_prompt.md    # 매일 학습 프롬프트
+```
+
+**💡 추천 순서**:
+1. **README.md 먼저 읽기** - CUA_VL 방법론의 철학과 전체 구조 이해
+2. **이 가이드(GETTING_STARTED.md)로 실습** - 단계별로 따라하며 학습 시작
+
+---
+
+### Step 1: 학습 준비
+
+CUA_VL_v2.0 폴더를 받으셨다면 바로 시작할 수 있습니다!
+
+**필요한 것**:
+- ✅ 이 폴더 (CUA_VL_v2.0/)
+- ✅ AI 어시스턴트 (Claude, ChatGPT, Gemini 등 - Vibe Coding Tools 권장)
+- ✅ 배우고 싶은 Topic과 학습 의지
+
+**선택사항**:
+- Git 저장소 (학습 과정 버전 관리 및 공유용)
 
 ---
 
@@ -63,7 +84,7 @@ CUA_VL 방법론에 맞게 작성하려면 어떤 정보가 필요한지
    - CUA_VL 템플릿 형식에 맞게 구조화
 
 3. **파일 저장**
-   - `CUA_VL/templates/[YourTopic]_topic_starter.md`로 저장
+   - `templates/[YourTopic]_topic_starter.md`로 저장 (CUA_VL_v2.0 폴더 기준)
 
 **핵심 장점**:
 - ✅ 라디오 버튼/체크박스로 빠른 선택
@@ -127,7 +148,7 @@ CUA_VL 방법론에 맞는 Topic 폴더를 만들어주세요.
 **AI가 하는 일**:
 1. **Topic 폴더 구조 자동 생성**
    ```
-   CUA_VL/Deep-Agent/
+   CUA_VL_v2.0/Topics/Deep-Agent/  # Topics 폴더 아래에 생성
    ├── topic_info.md              # topic_starter 내용 복사
    ├── vl_prompts/
    │   ├── roadmap_prompt.md      # Topic 정보 주입된 프롬프트
@@ -150,7 +171,7 @@ Topic 폴더가 생성되었다면, AI에게 아래 프롬프트를 사용하세
 
 **프롬프트 템플릿**:
 ```
-"[TopicName]/vl_prompts/roadmap_prompt.md 파일을 읽고
+"Topics/[TopicName]/vl_prompts/roadmap_prompt.md 파일을 읽고
 학습 로드맵을 생성해주세요.
 
 완료되면 다음 단계로 무엇을 하면 좋을지 안내해주세요."
@@ -158,7 +179,7 @@ Topic 폴더가 생성되었다면, AI에게 아래 프롬프트를 사용하세
 
 **예시**:
 ```
-"Deep-Agent/vl_prompts/roadmap_prompt.md 파일을 읽고
+"Topics/Deep-Agent/vl_prompts/roadmap_prompt.md 파일을 읽고
 학습 로드맵을 생성해주세요.
 
 완료되면 다음 단계로 무엇을 하면 좋을지 안내해주세요."
@@ -188,11 +209,11 @@ Roadmap이 준비되었다면, 매일 학습할 때 AI에게 아래 프롬프트
 
 **프롬프트 템플릿**:
 ```
-"[TopicName]/vl_prompts/daily_learning_prompt.md 파일을 읽고
+"Topics/[TopicName]/vl_prompts/daily_learning_prompt.md 파일을 읽고
 오늘의 학습을 도와주세요.
 
 현재 상황:
-- Roadmap 파일: vl_roadmap/YYYYMMDD_RoadMap_[Topic].md
+- Roadmap 파일: Topics/[TopicName]/vl_roadmap/YYYYMMDD_RoadMap_[Topic].md
 - 현재 모듈: M[N] - [모듈 이름]
 - 최근 WorkLog: [파일명 또는 '없음 - 첫 세션']
 - 사용 가능한 시간: [X시간]"
@@ -200,11 +221,11 @@ Roadmap이 준비되었다면, 매일 학습할 때 AI에게 아래 프롬프트
 
 **예시**:
 ```
-"Deep-Agent/vl_prompts/daily_learning_prompt.md 파일을 읽고
+"Topics/Deep-Agent/vl_prompts/daily_learning_prompt.md 파일을 읽고
 오늘의 학습을 도와주세요.
 
 현재 상황:
-- Roadmap 파일: vl_roadmap/20251228_RoadMap_Deep-Agent.md
+- Roadmap 파일: Topics/Deep-Agent/vl_roadmap/20251228_RoadMap_Deep-Agent.md
 - 현재 모듈: M1 - Deep Agent 개념
 - 최근 WorkLog: 없음 - 첫 세션
 - 사용 가능한 시간: 3시간"
@@ -250,17 +271,37 @@ graph TD
 
 ## 📁 폴더 구조 이해
 
-### CUA_VL 메인 폴더
+### 배포 패키지 구조
 ```
-CUA_VL/
+CUA_VL_v2.0/                    # 배포 패키지 (이 폴더)
 ├── README.md                    # 방법론 전체 설명
-├── GETTING_STARTED.md          # 이 파일
-├── templates/                  # 템플릿 파일들
-│   ├── topic_starter.md        # Topic 시작 템플릿
+├── GETTING_STARTED.md          # 빠른 시작 가이드 (이 파일)
+└── templates/                  # 템플릿 파일들
+    ├── topic_starter.md        # Topic 시작 템플릿
+    ├── roadmap_prompt_template.md  # Roadmap 생성 템플릿
+    └── daily_learning_prompt.md    # 매일 학습 프롬프트
+```
+
+### 학습 시작 후 구조 (예시)
+```
+CUA_VL_v2.0/                   # 배포 패키지 (루트)
+├── README.md
+├── GETTING_STARTED.md
+├── templates/
+│   ├── topic_starter.md
 │   ├── roadmap_prompt_template.md
 │   └── daily_learning_prompt.md
-├── CUA_VL_Development/         # CUA_VL 자체 개발 기록
-└── [각 Topic 폴더들]/          # 학습한 Topic들
+└── Topics/                    # Topic들을 관리하는 폴더 (AI가 생성)
+    ├── Deep-Agent/            # 첫 번째 Topic
+    │   ├── topic_info.md
+    │   ├── vl_prompts/
+    │   ├── vl_roadmap/
+    │   ├── vl_worklog/
+    │   └── vl_materials/
+    └── Docker-Basics/         # 두 번째 Topic
+        ├── topic_info.md
+        ├── vl_prompts/
+        └── ...
 ```
 
 ### Topic 폴더 구조
